@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1484737582 source:c:\users\admin2\documents\interference\tests\tests.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+	<vector>
+	"cpptest.h"
+	"..\waveGenerator.h"
+
+1483828668 c:\users\admin2\documents\interference\tests\cpptest.h
+	<iostream>
+	<stdlib.h>
+
+1483829347 c:\users\admin2\documents\interference\wavegenerator.h
+	<math.h>
+

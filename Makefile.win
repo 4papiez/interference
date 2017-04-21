@@ -1,0 +1,52 @@
+# Project: GFKProjectInterference
+# Compiler: Default GCC compiler
+# Compiler Type: MingW 3
+# Makefile created by wxDev-C++ IDE 7.4.2.569 on 26-01-17 18:04
+
+WXLIBNAME = wxmsw29u
+CPP       = g++.exe
+CC        = gcc.exe
+WINDRES   = "windres.exe"
+OBJ       = Objects/MingW/GFKProjectInterferenceApp.o Objects/MingW/GFKProjectInterferenceMain.o Objects/MingW/GUIDialog.o Objects/MingW/vectmat.o Objects/MingW/waveGenerator.o
+LINKOBJ   = "Objects/MingW/GFKProjectInterferenceApp.o" "Objects/MingW/GFKProjectInterferenceMain.o" "Objects/MingW/GUIDialog.o" "Objects/MingW/vectmat.o" "Objects/MingW/waveGenerator.o"
+LIBS      = -L"C:/Program Files (x86)/Dev-Cpp/lib/wx/gcc_lib" -L"C:/Program Files (x86)/Dev-Cpp/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -mwindows -l$(WXLIBNAME) -l$(WXLIBNAME)_gl -lwxscintilla -lwxtiff -lwxjpeg -lwxpng -lwxzlib -lwxregexu -lwxexpat -lkernel32 -luser32 -lgdi32 -lcomdlg32 -lwinspool -lwinmm -lshell32 -lcomctl32 -lole32 -loleaut32 -luuid -lrpcrt4 -ladvapi32 -lwsock32 -lodbc32 -lopengl32  
+INCS      = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include"
+CXXINCS   = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/" -I"C:/Program Files (x86)/Dev-Cpp/include/common"
+RCINCS    = --include-dir "C:/PROGRA~2/Dev-Cpp/include/common"
+BIN       = Output/MingW/GFKProjectInterference.exe
+DEFINES   = -D__WXMSW__ -D__GNUWIN32__ -D_UNICODE
+CXXFLAGS  = $(CXXINCS) $(DEFINES)  
+CFLAGS    = $(INCS) $(DEFINES)  
+GPROF     = gprof.exe
+ifeq ($(OS),Windows_NT)
+   RM = del /Q
+   FixPath = $(subst /,\,$1)
+else
+   RM = rm -f
+   FixPath = $1
+endif
+LINK      = g++.exe
+
+.PHONY: all all-before all-after clean clean-custom
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	$(RM) $(call FixPath,$(LINKOBJ)) "$(call FixPath,$(BIN))"
+
+$(BIN): $(OBJ)
+	$(LINK) $(LINKOBJ) -o "$(BIN)" $(LIBS) 
+
+Objects/MingW/GFKProjectInterferenceApp.o: $(GLOBALDEPS) GFKProjectInterferenceApp.cpp GFKProjectInterferenceApp.h GFKProjectInterferenceMain.h GFKProjectInterferenceApp.h GUIDialog.h vecmat.h waveGenerator.h
+	$(CPP) -c GFKProjectInterferenceApp.cpp -o Objects/MingW/GFKProjectInterferenceApp.o $(CXXFLAGS)
+
+Objects/MingW/GFKProjectInterferenceMain.o: $(GLOBALDEPS) GFKProjectInterferenceMain.cpp GFKProjectInterferenceMain.h GFKProjectInterferenceApp.h GUIDialog.h vecmat.h waveGenerator.h
+	$(CPP) -c GFKProjectInterferenceMain.cpp -o Objects/MingW/GFKProjectInterferenceMain.o $(CXXFLAGS)
+
+Objects/MingW/GUIDialog.o: $(GLOBALDEPS) GUIDialog.cpp GUIDialog.h
+	$(CPP) -c GUIDialog.cpp -o Objects/MingW/GUIDialog.o $(CXXFLAGS)
+
+Objects/MingW/vectmat.o: $(GLOBALDEPS) vectmat.cpp vecmat.h
+	$(CPP) -c vectmat.cpp -o Objects/MingW/vectmat.o $(CXXFLAGS)
+
+Objects/MingW/waveGenerator.o: $(GLOBALDEPS) waveGenerator.cpp waveGenerator.h
+	$(CPP) -c waveGenerator.cpp -o Objects/MingW/waveGenerator.o $(CXXFLAGS)
